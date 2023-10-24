@@ -1,0 +1,27 @@
+---
+type Props = {
+	title: string;
+	titleColored: string;
+	img?: string;
+	description: string;
+	fst?: boolean;
+};
+const { title, img, titleColored, description, fst } = Astro.props;
+import styles from './image.module.scss';
+---
+
+<div class={styles.card}>
+	<img
+		src={img}
+		alt='Image'
+		class={styles.cardImage}
+	/>
+	<h3>
+		<span class={fst ? styles.clrOrange : ''}>{titleColored} {' '}</span>
+		<span class={!fst ? styles.clrOrange : ''}>{title}</span>
+	</h3>
+
+	<p>
+		{description}
+	</p>
+</div>

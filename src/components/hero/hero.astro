@@ -1,0 +1,19 @@
+---
+import Button from '../../layouts/button/Button.astro';
+import styles from './hero.module.scss';
+---
+
+<section class={styles.hero_container}>
+  <h1>Crafting Visual Stories <span>Beyond</span> Imagination</h1>
+  <p>
+    Elevate your brand, Experience the power of storytelling through the lens of
+    creativity and innovation.
+  </p>
+  <Button title={`Let's Talk`} img={true} href='/contact-us' />
+  <img
+    src='/assets/hero-image.png'
+    alt='hero-image'
+    class={styles.hero_image}
+  />
+  <img src='/assets/dots.svg' alt='dots' class={styles.dots} />
+</section>

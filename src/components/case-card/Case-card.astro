@@ -1,0 +1,26 @@
+---
+type Props = {
+	title: string;
+	description: string;
+	img?: string;
+};
+const { title, description, img } = Astro.props;
+
+import ButtonMore from '../../layouts/button/Button-More.astro';
+import styles from './Case-card.module.scss';
+---
+
+<div class={styles.case_card}>
+	{
+		img && (
+			<img
+				src={img}
+				alt='Frame'
+                class={styles.case_card_img}
+			/>
+		)
+	}
+	<h3 class={styles.case_card__title}>{title}</h3>
+	<p class={styles.case_card__description}>{description}</p>
+	<ButtonMore text='Learn More' />
+</div>

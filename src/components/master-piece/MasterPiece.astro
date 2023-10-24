@@ -1,0 +1,53 @@
+---
+import Button from '../../layouts/button/Button.astro';
+import styles from './MasterPiece.module.scss';
+---
+
+<section class={styles.master_piece_container}>
+  <div class={styles.curated}>
+    <h3>Our Curated Masterpieces</h3>
+    <p>
+      Projects that define our commitment to storytelling, innovation, and the
+      art of video editing. Each video is a masterpiece, a testament to our
+      dedication to making your vision a reality
+    </p>
+  </div>
+  <div class={styles.tech}>
+    <h2>The Tech Guy</h2>
+    <p>A Day in the life of a Software Developer</p>
+    <Button
+      title={`View Project`}
+      img={true}
+      white={true}
+      href='/featured-works'
+    />
+  </div>
+  <div class={styles.pulse}>
+    <h2>We Are the Pulse</h2>
+    <p>An Ad made for MTN</p>
+    <Button
+      title={`View Project`}
+      img={true}
+      white={true}
+      href='/featured-works'
+    />
+  </div>
+  <div class={styles.projects}>
+    <div class={styles.images}>
+      <img src='/assets/project-img1.svg' alt='people' />
+      <img src='/assets/project-img2.svg' alt='people' class={styles.trans} />
+      <img src='/assets/project-img3.svg' alt='people' />
+      <img src='/assets/project-img4.svg' alt='people' class={styles.trans} />
+    </div>
+    <div class={styles.project_details}>
+      <h2>All Projects</h2>
+      <p>We don’t like to brag, so let our work do the talking</p>
+      <Button
+        title={`View Project`}
+        img={true}
+        white={true}
+        href='/featured-works'
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,208 @@
+---
+import styles from './reputation.module.scss';
+import './Card.css';
+
+// const cards = [
+//   {
+//     title: 'Genuine and special team members',
+//     name: 'Andy Curry',
+//     job: 'AirBnb',
+//     image: '/assets/ellipse.svg',
+//   },
+//   {
+//     title: 'They pull it off, again and again.',
+//     name: 'Barry Bones',
+//     job: 'MTN',
+//     image: '/assets/ellipse.svg',
+//   },
+//   {
+//     title: 'Absorbed our model immediately!!',
+//     name: 'Stephan Crew',
+//     job: 'Content Creator',
+//     image: '/assets/ellipse.svg',
+//   },
+//   {
+//     title: 'Took time to learn our business',
+//     name: 'Andrew Price',
+//     job: 'CMBBS',
+//     image: '/assets/ellipse.svg',
+//   },
+// ];
+---
+
+<!-- <section class={styles.reput: { title: any; name: any; job: any; image: any; }: { title: any; name: any; job: any; image: any; }ation_container}>
+  <img src='/assets/dot1.svg' alt='dot1' class={styles.dot2} />
+  <img src='/assets/dot3.svg' alt='dot2' class={styles.dot3} />
+  <h5>Our Reputation</h5>
+  <h2>Why our Clients love us</h2>
+
+  <div id='rep_cards' class={styles.rep_cards}>
+    {
+      cards.map((card, index) => {
+        return (
+          <div class={styles.rep_card} style={{ left: `${index * 100}%` }}>
+            <h4>“</h4>
+            <h3>{card.title}</h3>
+            <div class={styles.card_dets}>
+              <img src={card.image} alt={card.name} />
+              <div class={styles.details}>
+                <h6>{card.name}</h6>
+                <p>{card.job}</p>
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+  <div class={styles.buttons}>
+    <button id='prevButton'>
+      <img src='/assets/arrow-right.svg' alt='arrow-right' />
+    </button>
+
+    <button id='nextButton'>
+      <img src='/assets/arrow-left.svg' alt='arrow-left' />
+    </button>
+  </div>
+</section> -->
+<section class={styles.reputation_container}>
+  <img src='/assets/dot1.svg' alt='dot1' class={styles.dot2} />
+  <img src='/assets/dot3.svg' alt='dot2' class={styles.dot3} />
+  <h5>Our Reputation</h5>
+  <h2>Why our Clients love us</h2>
+
+  <div id='rep_cards' class={styles.rep_cards}></div>
+
+  <div class={styles.buttons}>
+    <button id='prevButton'>
+      <img src='/assets/arrow-right.svg' alt='arrow-right' />
+    </button>
+    <button id='nextButton'>
+      <img src='/assets/arrow-left.svg' alt='arrow-left' />
+    </button>
+  </div>
+</section>
+
+<script>
+  interface Card {
+    title: string;
+    name: string;
+    job: string;
+    image: string;
+  }
+
+  const cards: Card[] = [
+    {
+      title: 'Genuine and special team members',
+      name: 'Andy Curry',
+      job: 'AirBnb',
+      image: '/assets/ellipse.svg',
+    },
+    {
+      title: 'They pull it off, again and again.',
+      name: 'Barry Bones',
+      job: 'MTN',
+      image: '/assets/ellipse.svg',
+    },
+    {
+      title: 'Absorbed our model immediately!!',
+      name: 'Stephan Crew',
+      job: 'Content Creator',
+      image: '/assets/ellipse.svg',
+    },
+    {
+      title: 'Took time to learn our business',
+      name: 'Andrew Price',
+      job: 'CMBBS',
+      image: '/assets/ellipse.svg',
+    },
+  ];
+
+  let currentIndex = 0;
+  const cardContainer = document.getElementById('rep_cards') as HTMLElement;
+  const autoSlideInterval = 3000;
+  let autoSlideTimer: number | undefined;
+
+  function createCardElement(card: Card, idx: number) {
+    const cardElement = document.createElement('div');
+    cardElement.className = 'rep_card';
+
+    if (idx === 1) {
+      cardElement.classList.add('active');
+      cardContainer.classList.add('active');
+    }
+
+    cardElement.style.left = `${currentIndex * 100}%`;
+    cardElement.innerHTML = `
+      <h4>“</h4>
+      <h3  >${card.title}</h3>
+      <div class='card_dets'>
+        <img src='${card.image}' alt='${card.name}' />
+        <div class='details'>
+          <h6 >${card.name}</h6>
+          <p>${card.job}</p>
+        </div>
+      </div>
+    `;
+    return cardElement;
+  }
+
+  function renderCards() {
+    cardContainer.innerHTML = '';
+    cards.forEach((card, idx) => {
+      cardContainer.appendChild(createCardElement(card, idx));
+    });
+  }
+
+  function nextSlide() {
+    cards.push(cards.shift()!);
+    updateSlider();
+  }
+
+  function prevSlide() {
+    cards.unshift(cards.pop()!);
+    updateSlider();
+  }
+
+  function updateSlider() {
+    renderCards();
+  }
+
+  // Function to start the auto slider
+  function startAutoSlide() {
+    autoSlideTimer = setInterval(() => {
+      nextSlide();
+    }, autoSlideInterval);
+  }
+
+  // Function to stop the auto slider
+  function stopAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = undefined;
+  }
+
+  // Initial rendering of cards
+  renderCards();
+
+  // Add a check for screen width
+  if (window.innerWidth < 850) {
+    // Start the auto slider if the screen width is below 850px
+    startAutoSlide();
+  }
+
+  // Add a listener to stop the auto slider if the screen is resized above 850px
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 850) {
+      if (autoSlideTimer) {
+        stopAutoSlide();
+      }
+    } else {
+      if (!autoSlideTimer) {
+        startAutoSlide();
+      }
+    }
+  });
+
+  document.getElementById('prevButton')?.addEventListener('click', prevSlide);
+  document.getElementById('nextButton')?.addEventListener('click', nextSlide);
+</script>

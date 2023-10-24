@@ -1,0 +1,26 @@
+---
+type Props = {
+	title: string;
+	items: string[];
+	description?: string;
+	isDescription: boolean;
+	isSecond: boolean;
+};
+const { title, items, description, isDescription, isSecond } = Astro.props;
+import styles from './details-card.module.scss';
+---
+
+<div
+	class={styles?.detailsCard}
+	style={{
+		backgroundColor: isSecond ? 'rgba(255, 96, 31, 0.10)' : '#f2f4f7',
+	}}
+>
+	<h3>{title}</h3>
+
+	<ul>
+		{items?.map((el) => <li>{el}</li>)}
+	</ul>
+
+	{isDescription && <p>{description}</p>}
+</div>

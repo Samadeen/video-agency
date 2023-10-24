@@ -1,0 +1,93 @@
+---
+import Button from '../../layouts/button/Button.astro';
+import styles from './Solutions.module.scss';
+---
+
+<section class={styles.solutions_container}>
+  <div class={styles.solutions_wrapper}>
+    <h5>Who we help</h5>
+    <h2>We offer Custom Solutions for...</h2>
+    <div class={styles.solution_card}>
+      <div class={styles.businesses}>
+        <h4>Businesses and Brands</h4>
+        <p>
+          We're dedicated to helping businesses harness the true potential of
+          video content to connect with their audience, drive conversions, and
+          elevate their brand presence.
+        </p>
+
+        <ul>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Startups
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Retail and
+            E-Commerce
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Real Estate
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Entertainment
+            and Media
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Education and
+            E-Learning
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />And many more
+          </li>
+        </ul>
+        <p>We’re here to help you. Reach out to us as soon as possible!</p>
+        <Button
+          title={`See businesses`}
+          img={true}
+          transparent={true}
+          href='/business'
+        />
+      </div>
+      <div class={styles.individuals}>
+        <h4>Individuals</h4>
+        <p>
+          Whether you're a content creator, a filmmaker, or someone with a
+          passion for video, we're here to help you turn your vision into
+          captivating reality, enhancing your storytelling, and making every
+          frame count.
+        </p>
+
+        <ul>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Content
+            Creators
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Travel
+            Enthusiasts
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Special
+            Occasion Celebrants
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Online Course
+            Instructors
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />Creative
+            Artists
+          </li>
+          <li>
+            <img src='/assets/tick-circle.svg' alt='tick-circle' />And many more
+          </li>
+        </ul>
+        <Button
+          title={`See individuals`}
+          img={true}
+          transparent={true}
+          href='/individual'
+        />
+      </div>
+    </div>
+  </div>
+</section>

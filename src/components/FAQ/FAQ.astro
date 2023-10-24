@@ -1,0 +1,90 @@
+---
+import styles from './FAQ.module.scss';
+import './FAQ.css';
+---
+
+<div class={styles.faq_container}>
+  <h2>FAQ</h2>
+  <div class={styles.faq_wrapper} id='faq-container'>
+    <div class={styles.faq_column} id='faq-left-column'></div>
+    <div class={styles.faq_column} id='faq-right-column'></div>
+  </div>
+</div>
+<script>
+  const faqs = [
+    {
+      question: 'What services does tifi.tv offer?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'Do you provide custom solutions for unique projects?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'How can I get started with your services?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'Can you provide pricing information for your services?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'What is the typical process when working with tifi.tv?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'Can I see examples of your previous work?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'Do you have any case studies or success stories to share?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+    {
+      question: 'What sets tifi.tv apart from other agencies?',
+      answer:
+        'Tifi.tv offers a wide range of services, including video editing, content creation, motion graphics, color grading, animation, and more. Our goal is to bring your creative vision to life through visual storytelling.',
+    },
+  ];
+  const leftColumn = document.getElementById('faq-left-column');
+  const rightColumn = document.getElementById('faq-right-column');
+  faqs.forEach((faq, index) => {
+    const faqCard = document.createElement('div');
+    faqCard.className = 'faq_card';
+    const faqHeader = document.createElement('div');
+    faqHeader.className = 'faq';
+    const faqQuestion = document.createElement('h3');
+    faqQuestion.className = 'faq_question';
+    faqQuestion.textContent = faq.question;
+    const faqAnswer = document.createElement('p');
+    faqAnswer.className = 'faq_answer';
+    faqAnswer.textContent = faq.answer;
+    const toggle = document.createElement('div');
+    toggle.className = 'faq_toggle';
+    toggle.textContent = '+';
+    faqCard.addEventListener('click', () => {
+      faqAnswer.style.display =
+        faqAnswer.style.display === 'block' ? 'none' : 'block';
+      toggle.textContent = toggle.textContent === '+' ? '-' : '+';
+      toggle.style.backgroundColor =
+        toggle.textContent === '+' ? '' : 'rgba(255, 96, 31, 1)';
+      toggle.style.color =
+        toggle.textContent === '+' ? '' : 'rgba(242, 244, 247, 1)';
+    });
+    faqCard.appendChild(faqQuestion);
+    faqQuestion.appendChild(faqAnswer);
+    faqCard.appendChild(toggle);
+    if (index % 2) {
+      rightColumn!.appendChild(faqCard);
+    } else {
+      leftColumn!.appendChild(faqCard);
+    }
+  });
+</script>

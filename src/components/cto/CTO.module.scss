@@ -1,0 +1,51 @@
+.cto_container {
+  background-color: #ff4d002b;
+  padding: 2.84rem 0;
+  margin-top: 6.61rem;
+  .cto_wrapper {
+    max-width: 74.3125rem;
+    margin: 0 auto;
+
+    @media (max-width: 850px) {
+      max-width: 90rem;
+    }
+
+    @media (max-width: 500px) {
+      max-width: 95rem;
+    }
+
+    p {
+      color: #1d2939;
+      text-align: center;
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.5rem; /* 150% */
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .companies {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+
+      @media (max-width: 850px) {
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 5.19rem;
+        row-gap: 3rem;
+        padding: 0 1.5rem;
+      }
+
+      @media (max-width: 500px) {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 3em;
+        padding: 0 1rem;
+      }
+    }
+  }
+}

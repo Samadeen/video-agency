@@ -1,0 +1,26 @@
+---
+type Props = {
+	header?: string;
+	image?: string;
+	description?: string;
+	link?: string;
+	cardColor?: boolean;
+
+};
+const { header, image, description, link, cardColor } = Astro.props;
+import styles from './brand-card.module.scss';
+import Button from '../../layouts/button/Button.astro';
+---
+
+<div class={`${styles.container} ${cardColor && styles.white}`}>
+    <div>
+        <h3>{header}</h3>   
+        <p>{description}</p>
+		<Button title="View Resources" img={true} transparent={true}/>
+    </div>
+    <img
+		src={image}
+		alt='Image'
+		class={styles.cardImage}
+	/>
+</div>

@@ -1,0 +1,125 @@
+---
+import Button from '../../layouts/button/Button.astro';
+import styles from './Captivating.module.scss';
+const card = [
+  {
+    date: 'October 12, 2023',
+    length: '8 mins',
+    genre: 'Storytelling',
+    title: 'The Art of Storytelling Through Video',
+    description: `Discover how storytelling isn't just a technique but the heart of compelling video content. Learn how connecting with your audience's emotions can leave a lasting impact on them.`,
+    img: '/assets/cap-img3.svg',
+  },
+  {
+    date: 'October 12, 2023',
+    length: '8 mins',
+    genre: 'Tools',
+    title: '7 Essential Video Editing Techniques',
+    description: `Discover how storytelling isn't just a technique but the heart of compelling video content. Learn how connecting with your audience's emotions can leave a lasting impact on them.`,
+    img: '/assets/cap-img2.svg',
+  },
+  {
+    date: 'October 12, 2023',
+    length: '8 mins',
+    genre: 'Travel',
+    title: 'The Impact of Color Grading in Video Editing',
+    description: `Discover how storytelling isn't just a technique but the heart of compelling video content. Learn how connecting with your audience's emotions can leave a lasting impact on them.`,
+    img: '/assets/cap-img3.svg',
+  },
+];
+---
+
+<section class={styles.cap_container}>
+  <div class={styles.cap_wrapper}>
+    <h2>Explore Our Captivating Content!</h2>
+    <h5>
+      Uncover a world where stories come alive, emotions resonate, and visuals
+      speak louder than words. Our captivating content is a journey waiting for
+      you. Join us and experience the magic of tifi.tv.
+    </h5>
+
+    <div class={styles.cap_cards}>
+      {
+        card.map((card) => {
+          return (
+            <div class={styles.card}>
+              <div class='but'>
+                <Button title={`View Article`} img={true} white={true} />
+              </div>
+              <img src={card.img} alt={card.title} />
+              <div id='details' class={`${styles.details} animate`}>
+                <div class={styles.timeline}>
+                  <p>{card.date}</p>
+                  <p>{card.length}</p>
+                  <h6>{card.genre}</h6>
+                </div>
+                <div class={styles.card_dets}>
+                  <h3>{card.title}</h3>
+                  <p id='description' class={`p_animate`}>
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .animate {
+    transform: translateY(-0.3rem);
+    transition: all 0.6s ease-in-out;
+  }
+  .p_animate {
+    display: none;
+    transition: all 0.6s ease-in-out;
+  }
+  .but {
+    display: none;
+    position: absolute;
+    left: 6rem;
+    top: 2rem;
+    transition: all 0.6s ease-in-out;
+  }
+
+  @media (max-width: 850px) {
+    .but {
+      left: 35%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .but {
+      left: 30%;
+    }
+  }
+</style>
+
+<script>
+  const detailsList = document.querySelectorAll('.animate');
+  const paragraphList = document.querySelectorAll<HTMLElement>('.p_animate');
+  const but = document.querySelectorAll<HTMLElement>('.but');
+
+  detailsList.forEach((details, index) => {
+    if (details instanceof HTMLElement) {
+      details.addEventListener('mouseover', () => {
+        details.style.transform = 'translateY(-10rem)';
+        but[index].style.display = 'block';
+        if (paragraphList[index] instanceof HTMLElement) {
+          paragraphList[index].style.display = 'block';
+        }
+      });
+
+      details.addEventListener('mouseout', () => {
+        details.style.transform = 'translateY(-0.3rem)';
+        but[index].style.display = 'none';
+        if (paragraphList[index] instanceof HTMLElement) {
+          paragraphList[index].style.display = 'none';
+        }
+      });
+    }
+  });
+</script>

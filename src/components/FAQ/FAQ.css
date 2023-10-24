@@ -1,0 +1,50 @@
+.faq {
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq_card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  min-height: 107px;
+  border-radius: 0.5rem;
+  background: #f2f4f7;
+  margin-bottom: 1rem;
+}
+
+.faq_question {
+  width: min(100%, 37ch);
+  color: #1d2939;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+.faq_card p {
+  margin-top: 1rem;
+  width: 100%;
+  color: #344054;
+  font-family: 'Noto Sans';
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.faq_card .faq_toggle {
+  color: #344054;
+  font-family: 'Noto Sans';
+  font-size: 1.125rem;
+  font-weight: 400;
+  border-radius: 0.5rem;
+  width: min-content;
+  background: #eaecf0;
+  padding: 0.5rem 1rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.faq_answer {
+  display: none;
+}

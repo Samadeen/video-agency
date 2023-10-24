@@ -1,0 +1,73 @@
+.rep_card {
+  width: 27.8125rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.rep_card h4,
+.rep_card h3 {
+  color: #101828;
+  font-family: 'Red Hat Display';
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.rep_card h4 {
+  color: #ff601f;
+  margin-bottom: 1.5rem;
+}
+
+.card_dets {
+  padding-top: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid #d0d5dd;
+}
+
+.details h6 {
+  color: #344054;
+  font-family: 'Noto Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.details p {
+  color: #667085;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.rep_card.active {
+  background-color: #101828;
+}
+
+.rep_card.active h3,
+.rep_card.active h6 {
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .rep_card {
+    width: 20.13rem;
+  }
+
+  .rep_card h4,
+  .rep_card h3 {
+    font-size: 1.5rem;
+  }
+}
