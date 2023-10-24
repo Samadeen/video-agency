@@ -1,0 +1,20 @@
+.button_more {
+	border: none;
+	padding: 0.75rem 1.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.75rem;
+	color: #101828;
+	font-family: Inter;
+	font-size: 1rem;
+	font-weight: 800;
+	line-height: 1.5rem; /* 150% */
+	border-radius: 0.5rem;
+	border: 1px solid #d0d5dd;
+    text-transform: uppercase;
+	background-color: #FCFCFD;
+	align-self: normal;
+	/* Cloudy */
+	box-shadow: 0px 14px 16px 0px rgba(29, 41, 57, 0.05);
+}

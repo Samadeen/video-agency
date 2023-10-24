@@ -1,0 +1,68 @@
+---
+import styles from './Potential.module.scss';
+import Button from '../button/Button.astro';
+import ImageCard from '../../components/image-card/Image-card.astro';
+
+const cardDetails = [
+	{
+		title: 'Quality',
+		titleColored: 'Professional',
+		img: '../../../public/assets/Frame 40.png',
+		description:
+			'You can achieve professional-level video content that rivals that of larger productions, ensuring a high-quality end product.',
+		fst: true,
+	},
+
+	{
+		title: 'Engagement',
+		titleColored: 'Improved',
+		img: '../../../public/assets/Frame 40-1.png',
+		description:
+			'Professional videos tend to engage and captivate audiences more effectively, helping you connect with your viewers.',
+		fst: false,
+	},
+
+	{
+		title: 'Branding',
+		titleColored: 'Personal',
+		img: '../../../public/assets/Frame 40-2.png',
+		description:
+			'Benefit from your our support in creating videos that enhance personal brand, helping you stand out in the digital landscape.',
+		fst: false,
+	},
+];
+---
+
+<section class={styles?.sectionPotentials}>
+	<div class={styles.container}>
+		<h1>Unlock Your <span>Creative</span> Potential</h1>
+		<p class={styles.sectionDescription}>
+			Whether you're documenting your travels, sharing your daily
+			adventures, or building your personal brand, we're here to help.
+		</p>
+
+		<div class={styles.cardContainer}>
+			{
+				cardDetails.map((el) => (
+					<ImageCard
+						title={el.title}
+						titleColored={el.titleColored}
+						img={el.img}
+						description={el.description}
+						fst={el.fst}
+					/>
+				))
+			}
+		</div>
+
+		<p class={styles.sectionText}>
+			With tifi.tv, your creative vision transforms into captivating
+			visual stories.
+		</p>
+
+		<Button
+			title="let's talk"
+			img={true}
+		/>
+	</div>
+</section>

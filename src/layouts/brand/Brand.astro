@@ -1,0 +1,24 @@
+---
+import styles from './brand.module.scss';
+import BrandCard from '../../components/brand-card/Brand-card.astro';
+---
+
+<section class={styles.container}>
+    <div class={styles.header}>
+        <h2>WHAT WE CAN DO FOR YOU</h2>   
+        <p>Custom Solutions for...</p>
+    </div>
+    <BrandCard
+        cardColor=true
+        header='Business and Brands'
+        description="From marketing strategies to the latest industry insights, our resources are designed to be your guiding light in the world of visual storytelling. We're dedicated to helping businesses harness the true potential of video content to connect with their audience, drive conversions, and elevate their brand presence."
+        image='/assets/brand-image1.png'
+        link=""
+    />
+    <BrandCard
+        header='Individuals'
+        description="Whether you're a content creator, a filmmaker, or someone with a passion for video, our resources are designed to be your creative compass. We're here to help you turn your vision into captivating reality, enhancing your storytelling, and making every frame count."
+        image='/assets/brand-image2.png'
+        link=""
+    />
+</section>

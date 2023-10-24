@@ -1,0 +1,22 @@
+{
+  "name": "cyan-chroma",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "host": "astro --host"
+  },
+  "dependencies": {
+    "@fontsource-variable/plus-jakarta-sans": "^5.0.17",
+    "@fontsource/inter": "^5.0.14",
+    "@fontsource/red-hat-display": "^5.0.16",
+    "astro": "^3.3.2"
+  },
+  "devDependencies": {
+    "sass": "^1.69.4"
+  }
+}

@@ -1,0 +1,19 @@
+---
+type Props = {
+	text: string;
+};
+const { text } = Astro.props;
+
+import styles from './Button-More.module.scss';
+---
+
+<button class={styles.button_more}
+	>{text}
+	<img
+		src='../../../public/assets/arrow-up-black.svg'
+		alt='Button'
+		style={{
+            width: '15px',
+        }}
+	/>
+</button>

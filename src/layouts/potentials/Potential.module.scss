@@ -1,0 +1,53 @@
+.sectionPotentials {
+	padding-block: 6rem;
+	background-color: #f2f4f7;
+
+	.container {
+		max-width: 74.25rem;
+		margin-inline: auto;
+		display: grid;
+		justify-items: center;
+	}
+	
+	h1 {
+		color: #1d2939;
+		text-align: center;
+		font-family: Red Hat Display;
+		// font-size: 4rem;
+		font-size: clamp(2rem, 1.1818rem + 3.6364vw, 4rem);
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+
+		span {
+			color: #ff601f;
+		}
+	}
+
+	p {
+		color: #344054;
+		text-align: center;
+		font-family: Noto Sans;
+		font-size: 1rem;
+		font-weight: 400;
+		max-width: min(100%, 81ch);
+		margin-inline: auto;
+		line-height: normal;
+	}
+	.cardContainer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
+	}
+
+	.sectionDescription {
+		margin-top: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.sectionText {
+		margin-top: 2.62rem;
+		margin-bottom: 2rem;
+	}
+}

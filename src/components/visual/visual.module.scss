@@ -1,0 +1,98 @@
+.visual_container {
+  max-width: 74.3125rem;
+  margin: 0 auto 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: 850px) {
+    max-width: 90rem;
+  }
+
+  h2 {
+    max-width: 63.8125rem;
+    color: #101828;
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 6rem auto 4rem;
+
+    span {
+      color: #ff601f;
+    }
+
+    @media (max-width: 850px) {
+      font-size: 3rem;
+      max-width: 95rem;
+    }
+
+    @media (max-width: 500px) {
+      font-size: 2rem;
+      max-width: 84vw;
+    }
+  }
+
+  .visual_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 850px) {
+      padding: 0 2rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .visual_card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      background: #f2f4f7;
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+      @media (max-width: 850px) {
+        &:nth-last-child(-n + 2) {
+          grid-column: span 3;
+        }
+      }
+      h3 {
+        margin: 1.5rem 1rem;
+        color: #1d2939;
+        text-align: center;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+
+      p {
+        color: #344054;
+        text-align: center;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}

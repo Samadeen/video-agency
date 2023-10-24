@@ -1,0 +1,40 @@
+---
+type Props = {
+  title: string;
+  img?: boolean;
+  href?: string;
+  transparent?: boolean;
+  white?: boolean;
+  whiter?: boolean;
+};
+const { title, img, href, transparent, white, whiter } = Astro.props;
+import styles from './Button.module.scss';
+---
+
+<a
+  href={href}
+  class={`${styles.button} ${transparent && styles.transparent} ${
+    white && styles.white
+  } ${whiter && styles.whiter}`}
+>
+  {title}
+  {
+    img && (
+      <svg
+        width='25'
+        height='24'
+        viewBox='0 0 25 24'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M19.5 5L5.5 19M19.5 5V18.1765M19.5 5H6.32353'
+          stroke={transparent ? '#1d2939' : whiter ? '#1d2939' : 'white'}
+          stroke-width='3'
+          stroke-linecap='square'
+          stroke-linejoin='bevel'
+        />
+      </svg>
+    )
+  }
+</a>

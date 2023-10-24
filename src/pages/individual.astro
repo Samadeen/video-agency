@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Potentials from '../layouts/potentials/PotentialSection.astro';
+import CustomerSolutions from '../layouts/customSolutions/custom-solutions.astro';
+import Form from '../components/form/Form.astro';
+import styles from '../layouts/caseStudies/Case-studies.module.scss';
+import CaseStudies from '../layouts/caseStudies/case-studies.astro';
+---
+
+<Layout title='Welcome to Astro.'>
+  <main>
+    <Potentials />
+    <CustomerSolutions />
+    <CaseStudies />
+    <section class={styles.section_contact}>
+      <div class={styles.container}>
+        <h2 class={styles.section_contact__title}>
+          Let us know how we can help yOUR BUSINESS.
+        </h2>
+        <Form />
+      </div>
+    </section>
+  </main>
+</Layout>

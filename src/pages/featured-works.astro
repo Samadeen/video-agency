@@ -1,0 +1,233 @@
+---
+import Layout from '../layouts/Layout.astro';
+import styles from '../components/hero-container/heroContainer.module.scss';
+import VideoCard from '../components/video-card/VideoCard.astro';
+import FAQ from '../components/FAQ/FAQ.astro';
+import CTO from '../components/cto/CTO.astro';
+import Form from '../components/form/Form.astro';
+---
+
+<Layout title='Tiff Video Agency || Feature Works.'>
+  <main class='feature_container'>
+    <div class={styles.hero_container}>
+      <h1><span>Featured</span> Works</h1>
+      <p>
+        We don't just edit videos; we choreograph stories that resonate,
+        inspire, and leave a lasting impression. Browse through our
+        award-winning work and find concepts that move you
+      </p>
+    </div>
+    <div class='careful_wrapper'>
+      <div class='careful'>
+        <h2>Carefully Picked Videos</h2>
+        <div class='careful_header'>
+          <div class='tags'>
+            <h5 id='business' class='active'>Businesses</h5>
+            <h5 id='individual'>Individual</h5>
+          </div>
+          <select name='' id=''>
+            <option value=''>Short Films</option>
+          </select>
+        </div>
+        <div class='careful_cards'>
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+          <VideoCard />
+        </div>
+      </div>
+    </div>
+    <div class='contact'>
+      <img src='/assets/dot4.svg' alt='v' />
+      <h3>Let us know how we can help you.</h3>
+      <p>
+        In just 48 hours, our experts will meticulously assess your video
+        content and reveal untapped opportunities for enhancing your <strong
+          >brand</strong
+        > and visual storytelling.
+      </p>
+      <Form />
+    </div>
+    <FAQ />
+    <CTO />
+  </main>
+</Layout>
+
+<style>
+  .careful_wrapper {
+    padding: 6rem 0;
+    background: #f2f4f7;
+    margin: 2.81rem 0;
+  }
+
+  .careful_header {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 500px) {
+    .careful_header {
+      flex-direction: column;
+    }
+  }
+
+  .tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 90%;
+    gap: 2.5rem;
+    margin: 3rem 0;
+    border-bottom: 1px solid #d0d5dd;
+  }
+
+  @media (max-width: 500px) {
+    .tags {
+      flex: 100%;
+      width: 90%;
+    }
+  }
+
+  select {
+    flex: 10%;
+    border-radius: 0.5rem;
+    border: 1px solid = #d0d5dd;
+    background: #fff;
+    padding: 0.62rem 0.88rem;
+    border: none;
+  }
+
+  @media (max-width: 500px) {
+    select {
+      flex: 100%;
+      width: 90%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .tags h5 {
+    color: #344054;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    padding-bottom: 1rem;
+  }
+
+  .tags h5.active {
+    color: #ff601f;
+    border-bottom: 4px solid #ff601f;
+  }
+
+  .careful_wrapper .careful h2 {
+    color: #1d2939;
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  @media (max-width: 500px) {
+    .careful_wrapper .careful h2 {
+      font-size: 2.5rem;
+    }
+  }
+  .careful {
+    max-width: 74.56rem;
+    margin: 0 auto;
+  }
+
+  .careful_cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 1rem;
+    max-width: 74.56rem;
+    margin: 0 auto;
+  }
+
+  .active {
+    color: #ff601f;
+    border-bottom: 4px solid #ff601f;
+  }
+
+  .contact {
+    position: relative;
+    padding: 4rem 0;
+  }
+
+  .contact h3 {
+    color: #101828;
+    text-align: center;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    max-width: 71.75rem;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 850px) {
+    .contact h3 {
+      max-width: 85vw;
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .contact h3 {
+      max-width: 90vw;
+      font-size: 2rem;
+    }
+  }
+
+  .contact p {
+    color: #344054;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 1.6rem */
+    max-width: 50.1875rem;
+    margin: 1.5rem auto;
+  }
+  @media (max-width: 500px) {
+    .contact p {
+      max-width: 90vw;
+      padding: 0 1rem;
+    }
+  }
+  .contact img {
+    position: absolute;
+    top: -2.3rem;
+    left: 0;
+  }
+</style>
+
+<script>
+  const business = document.getElementById('business');
+  const individual = document.getElementById('individual');
+
+  business?.addEventListener('click', () => {
+    business.classList.add('active');
+    individual?.classList.remove('active');
+  });
+
+  individual?.addEventListener('click', () => {
+    individual.classList.add('active');
+    business?.classList.remove('active');
+  });
+</script>

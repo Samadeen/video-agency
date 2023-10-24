@@ -1,0 +1,265 @@
+---
+import Layout from '../layouts/Layout.astro';
+import styles from '../layouts/potentials/Potential.module.scss';
+import styles1 from '../layouts/customSolutions/custom-solutions.module.scss';
+import styles2 from './Business.module.scss';
+import styles3 from '../layouts/caseStudies/Case-studies.module.scss';
+import styles4 from '../layouts/caseStudies/Case-studies.module.scss';
+import ImageCard from '../components/image-card/Image-card.astro';
+import Button from '../layouts/button/Button.astro';
+import DetailsCard from '../components/details-card/details-card.astro';
+import CaseCard from '../components/case-card/Case-card.astro';
+import Form from '../components/form/Form.astro';
+
+const cardDetails = [
+	{
+		title: 'Product ',
+		titleColored: 'Demonstrations',
+		img: '../../public/assets/skincare.jpg',
+		description:
+			'Present your products in their best light with dynamic and engaging demonstrations that showcase their features and benefits.',
+		fst: false,
+	},
+
+	{
+		title: 'Promotional ',
+		titleColored: 'Videos',
+		img: '../../public/assets/camera.jpg',
+		description:
+			'Craft compelling promotional videos that captivate your audience, drive conversions, and enhance brand visibility.',
+		fst: false,
+	},
+
+	{
+		title: ' Communications',
+		titleColored: 'Internal',
+		img: '../../public/assets/presentation.jpg',
+		description:
+			'Foster strong internal connections through effective video communication, making sure your message resonates with your team.',
+		fst: true,
+	},
+];
+
+const info = [
+	{
+		title: 'Branding & Marketing',
+		items: [
+			'Brand Identity Videos',
+			'Product and Service Promotion',
+			'Event Videos',
+			'Recruitment and HR Videos',
+			'Training and Educational Videos',
+			'And many more',
+		],
+		description:
+			'We’re here to help you. Reach out to us as soon as possible!',
+		isDescription: true,
+		isSecond: false,
+	},
+
+	{
+		title: 'Content & Personal Branding',
+		items: [
+			'Social Media Videos',
+			'Ad Campaign Videos',
+			'Content Marketing Videos',
+			'Email Marketing Videos',
+			'YouTube and Online Video Content',
+			'And many more',
+		],
+		isDescription: false,
+		isSecond: true,
+	},
+];
+
+const caseData = [
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+		img: '../../public/assets/Frame 133.svg',
+	},
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+		img: '../../public/assets/Frame 133.svg',
+	},
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+		img: '../../public/assets/Frame 133.svg',
+	},
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+		img: '../../public/assets/Frame 133.svg',
+	},
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+		img: '../../public/assets/Frame 133.svg',
+	},
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+		img: '../../public/assets/Frame 133.svg',
+	},
+];
+---
+
+<Layout title='Welcome to Astro.'>
+	<section class={styles?.sectionPotentials}>
+		<div class={styles.container}>
+			<h1>Our Palette of <span>Corporate</span> Video Services</h1>
+
+			<p class={styles.sectionDescription}>
+				Unlocking the Power of Visual Storytelling for Your Business
+			</p>
+
+			<div class={styles.cardContainer}>
+				{
+					cardDetails.map((el) => (
+						<ImageCard
+							title={el.title}
+							titleColored={el.titleColored}
+							img={el.img}
+							description={el.description}
+							fst={el.fst}
+						/>
+					))
+				}
+			</div>
+
+			<p class={styles.sectionText}>
+				We believe that every video has a story to tell, and every story
+				has a message that connects. Our corporate video services are
+				not just about visuals; they're about creating a lasting impact
+				on your branding and marketing goals.
+			</p>
+
+			<Button
+				title="let's talk"
+				img={true}
+			/>
+		</div>
+	</section>
+	<section
+		class={styles1.sectionCustom}
+		style={{
+			backgroundColor: '#fcfcfd',
+		}}
+	>
+		<div class={styles1.container}>
+			<span>WHAT WE CAN DO FOR YOU</span>
+
+			<h2>Custom Solutions for...</h2>
+
+			<div class={styles1.detailsCard_container}>
+				{
+					info.map((el) => (
+						<DetailsCard
+							title={el.title}
+							items={el.items}
+							description={el.description}
+							isDescription={el.isDescription}
+							isSecond={el.isSecond}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<section class={styles2.section_impact}>
+		<div class={styles2.container}>
+			<h2>Our Impact on Businesses</h2>
+			<p>Stories of transformation, engagement, and success.</p>
+
+			<div class={styles2.section_impact_card}>
+				<div>
+					<h3>3000<span>+</span></h3>
+					<p>Businesses empowered</p>
+				</div>
+				<div>
+					<h3>50<span>%</span></h3>
+					<p>Growth in online engagement</p>
+				</div>
+				<div>
+					<h3>100m<span>+</span></h3>
+					<p>Total Views</p>
+				</div>
+			</div>
+
+			<p>
+				These figures reflect the tangible results we deliver to
+				businesses across diverse sectors. Our video editing and
+				storytelling expertise drive growth and success
+			</p>
+		</div>
+	</section>
+	<section class={styles3.section_case}>
+		<div class={styles3.container}>
+			<h2>
+				Case <span
+					style={{
+						color: '#FF601F',
+					}}>Studies</span
+				>
+			</h2>
+			<p class={styles3.section_description}>
+				Stories of transformation, engagement, and success.
+			</p>
+			<div class={styles3.section_case__cards}>
+				{
+					caseData?.map((el) => (
+						<CaseCard
+							title={el.title}
+							description={el.description}
+							img={el.img}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<section class={styles2.brand}>
+		<div class={styles2.container}>
+			<h2>Elevating Your Brand's Identity</h2>
+			<p>
+				Your brand's identity is at the core of your business, and it's
+				our privilege to enhance it through video storytelling. We
+				believe that video is the medium that connects brands to their
+				audience, and we're here to craft your unique narrative.
+			</p>
+
+			<div class={styles2.brand_desc}>
+				<div class={styles2.brand_desc__img}></div>
+				<p class={styles2.brand_desc__text}>
+					Our expertise in video storytelling goes beyond the visual.
+					It's about weaving a narrative that speaks directly to your
+					audience, creating a connection that goes beyond words. With
+					tifi.tv, your branding and marketing efforts are not just
+					campaigns; they're stories waiting to be told.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class={styles2.section_form}>
+		<div class={styles2.container}>
+			<h2 class={styles2.section_form__title}>
+				Let’s Create Something Together
+			</h2>
+			<p class={styles2.section_form__desc}>
+				It's time to turn your vision into reality. The possibilities
+				are endless when it comes to visual storytelling. If you're
+				ready to embark on a project that can transform your business,
+				we're here to make it happen.
+			</p>
+			<Form />
+		</div>
+	</section>
+</Layout>

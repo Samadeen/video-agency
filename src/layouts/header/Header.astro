@@ -1,0 +1,124 @@
+---
+import Button from '../button/Button.astro';
+import styles from './Header.module.scss';
+---
+
+<header>
+  <a href='/'><img src='/assets/logo.svg' alt='logo' /></a>
+  <nav class={styles.desktop_nav}>
+    <ul>
+      <li><a href='/about-us'>About</a></li>
+      <li><a href='/featured-works'>Portfolio</a></li>
+      <li id='client'>
+        <a>Clients <img src='/assets/arrow-down.svg' alt='' /></a>
+        <div id='group' class={styles.group}>
+          <a href='/individual'>Individual</a>
+          <a href='/business'>Business</a>
+        </div>
+      </li>
+      <li><a href='/resources'>Resources</a></li>
+    </ul>
+  </nav>
+  <div class={styles.desktop__button}>
+    <Button title={`let's talk`} img={false} href='/contact-us' />
+  </div>
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    width='24'
+    height='24'
+    viewBox='0 0 24 24'
+    fill='none'
+    class='open'
+  >
+    <path
+      d='M3 12H21M3 6H21M3 18H21'
+      stroke='#344054'
+      stroke-width='2'
+      stroke-linecap='round'
+      stroke-linejoin='round'></path>
+  </svg>
+  <div id='mobile__nav' class={styles.mobile__nav}>
+    <nav class={styles.mobile_nav}>
+      <ul>
+        <li><a href='/about-us'>About</a></li>
+        <li><a href='/featured-works'>Portfolio</a></li>
+        <li id='m_client'>
+          <a
+            >Clients <img src='/assets/arrow-down.svg' alt='' />
+            <div id='m_group' class={styles.m_group}>
+              <a href='/individual'>Individual</a>
+              <a href='/business'>Business</a>
+            </div>
+          </a>
+        </li>
+        <li><a href='/resources'>Resources</a></li>
+      </ul>
+    </nav>
+    <div>
+      <Button
+        title={`let's talk`}
+        img={false}
+        white={true}
+        href='/contact-us'
+      />
+    </div>
+  </div>
+</header>
+
+<style>
+  #mobile__nav.open {
+    left: 0;
+  }
+  #group.open {
+    top: 0;
+  }
+  #m_group.open {
+    top: 0;
+  }
+</style>
+
+<script>
+  const open_btn = document.querySelector('.open');
+  const navbar = document.getElementById('mobile__nav');
+  const client = document.getElementById('client');
+  const m_client = document.getElementById('m_client');
+  const group = document.getElementById('group');
+  const m_group = document.getElementById('m_group');
+
+  let isNavOpen = false;
+  let isGroupOpen = false;
+
+  open_btn!.addEventListener('click', () => {
+    if (isNavOpen) {
+      navbar!.style.left = '-100%';
+    } else {
+      navbar!.style.left = '0';
+    }
+
+    isNavOpen = !isNavOpen;
+  });
+
+  client!.addEventListener('click', () => {
+    if (!isGroupOpen) {
+      group!.style.top = '2rem';
+      group!.style.display = 'inline-block';
+    } else {
+      group!.style.top = '0';
+      group!.style.display = 'none';
+    }
+
+    isGroupOpen = !isGroupOpen;
+  });
+
+  m_client!.addEventListener('click', () => {
+    if (isGroupOpen) {
+      m_group!.style.top = '2rem';
+      m_group!.style.display = 'inline-block';
+    } else {
+      m_group!.style.top = '0';
+      m_group!.style.display = 'none';
+    }
+
+    isGroupOpen = !isGroupOpen;
+  });
+</script>

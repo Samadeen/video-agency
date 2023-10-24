@@ -1,0 +1,13 @@
+---
+import Button from '../../layouts/button/Button.astro';
+import styles from './VideoCard.module.scss';
+---
+
+<div class={styles.video_card}>
+  <img src='/assets/play.svg' alt='play' />
+  <p class={styles.bot}>A Day in the life of a Software Developer</p>
+  <div class={styles.backdrop}>
+    <p>This could be your project as a part of our amazing curation.</p>
+    <Button title={`Let's Talk`} whiter={true} img={true} />
+  </div>
+</div>

@@ -1,0 +1,96 @@
+---
+import styles from './feature.module.scss'
+
+const Data = [
+    {   
+        img: '/assets/feature-image.png',
+        text: 'Video Editing',
+        title: 'Time lapse and Mapping',
+        description: 'We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.'
+    },
+    
+    {   
+        img: '/assets/feature-image.png',
+        text: 'Video Editing',
+        title: 'Time lapse and Mapping',
+        description: 'We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.'
+    },
+    
+    {   
+        img: '/assets/feature-image.png',
+        text: 'Video Editing',
+        title: 'Time lapse and Mapping',
+        description: 'We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.'
+    },
+    
+    {   
+        img: '/assets/feature-image.png',
+        text: 'Video Editing',
+        title: 'Time lapse and Mapping',
+        description: 'We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.'
+    },
+    
+    {   
+        img: '/assets/feature-image.png',
+        text: 'Video Editing',
+        title: 'Time lapse and Mapping',
+        description: 'We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.'
+    },
+    
+    {   
+        img: '/assets/feature-image.png',
+        text: 'Video Editing',
+        title: 'Time lapse and Mapping',
+        description: 'We harness cutting-edge technology to capture the dynamic evolution of landscapes, cityscapes, and more.'
+    },
+    
+]
+---
+
+<section class={styles.feature_container}>
+    <div class={styles.tags}>
+        <h5 id='tabs' class='active'>Video Editing Tips</h5>
+        <h5 id='tabs'>Creative Storytelling</h5>
+        <h5 id='tabs'>Industry Insights</h5>
+        <h5 id='tabs'>Video Marketing</h5>
+    </div>
+
+    <h2>Featured</h2>
+    <div class={styles.feature_grid}>
+        {Data.map(data => {
+    return (
+        <div class={styles.feature_card}>
+         <img src={data.img} alt={data.title}>
+         <h4>{data.text}</h4>
+         <div>
+            <h3>{data.title}</h3>
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.5 5L5.5 19M19.5 5V18.1765M19.5 5H6.32353" stroke='#1D2939' stroke-width="3" stroke-linecap="square" stroke-linejoin="bevel"/>
+            </svg>
+         </div>
+         <p>{data.description}</p>   
+        </div>
+    )
+})}
+    </div>
+</section>
+
+<style>
+    .active {
+      color: #ff601f;
+      border-bottom: 4px solid #ff601f;
+    }
+</style>
+
+<script>
+    const tabs = document.querySelectorAll('#tabs');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(tab => {
+          tab.classList.remove('active');
+        });
+        tab.classList.add('active');
+      });
+    });
+</script>

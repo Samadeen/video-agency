@@ -1,0 +1,73 @@
+---
+import Button from '../../layouts/button/Button.astro';
+import styles from './Visual.module.scss';
+
+const visualData = [
+  {
+    img: '/assets/video-vertical.svg',
+    title: 'Video Editing',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/color-grading.svg',
+    title: 'Color Grading',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/audio-editing.svg',
+    title: 'Audio Editing',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/transition-effect.svg',
+    title: 'Transition and Effects',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/motion-graphics.svg',
+    title: 'Motion Graphics',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/visual-effect.svg',
+    title: 'Visual Effects',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/time-lapse.svg',
+    title: 'Time-Laspe Editing',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+  {
+    img: '/assets/video-cleanup.svg',
+    title: 'Video Cleanup',
+    description: 'Comprehensive video editing to enhance the visual appeal',
+  },
+];
+---
+
+<section class={styles.visual_container}>
+  <h2>
+    ...we are your creative partner in <span>visual</span> storytelling...
+  </h2>
+  <div class={styles.visual_grid}>
+    {
+      visualData.map((data) => {
+        return (
+          <div class={styles.visual_card}>
+            <img src={data.img} alt={data.title} />
+            <h3>{data.title}</h3>
+            <p>{data.description}</p>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <Button
+    title={`explore all services`}
+    img={true}
+    transparent={true}
+    href='/featured-works'
+  />
+</section>

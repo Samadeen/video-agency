@@ -1,0 +1,57 @@
+.container {
+	background: rgba(242, 244, 247, 1);
+	padding: 6.8rem 0 5.8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
+	
+	@media (max-width: 834px) {
+		background: rgba(252, 252, 253, 1);
+		padding: 4.5rem 2.5rem;
+
+		.header {
+			display: block;
+		}
+    }
+    @media (max-width: 390px) {
+		padding: 0;
+		gap: 2rem;
+    }
+}
+
+
+.header{
+	text-align: center;
+	display: none;
+	
+	h2{
+		display: block;
+		color: #FF601F;
+		font-size: 1.25rem;
+		font-family: 'Noto Sans', sans-serif;
+		font-weight: 700;
+		line-height: 2rem;
+		margin-bottom: 1.5rem;
+		text-transform: uppercase;
+	}
+	p{
+	   color: #101828;
+	   font-size: 3rem;
+	   font-family: 'Red Hat Display', sans-serif;
+	   font-weight: 600;
+	   margin-bottom: 1.5rem;
+   }
+
+   @media (max-width: 390px) {
+	h2{
+		font-size: 1rem;
+	}
+
+	p{
+		font-size: 2rem;
+		font-family: 'Red Hat Display', sans-serif;
+		font-weight: 600;
+	}
+   }
+}

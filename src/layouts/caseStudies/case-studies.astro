@@ -1,0 +1,50 @@
+---
+import CaseCard from '../../components/case-card/Case-card.astro';
+import styles from './case-studies.module.scss';
+
+const caseData = [
+	{
+		title: 'Wanderlust Chronicles',
+		description:
+			'The project garnered over 1 million views and sparked a 20% increase in travel bookings for our client',
+	},
+	{
+		title: 'City Vibes Unveiled',
+		description:
+			'The series achieved a 30% increase in viewer engagement, with viewers expressing a strong connection to the featured cities.',
+	},
+	{
+		title: 'A Lifetime in a Day',
+		description:
+			'The video left a lasting impression, with heartfelt reactions from viewers and 50,000 shares across social media platforms.',
+	},
+];
+---
+
+<section class={styles.section_case}>
+	<div class={styles.container}>
+		<h2>
+			Case <span
+				style={{
+					color: '#FF601F',
+				}}>Studies</span
+			>
+		</h2>
+		<p class={styles.section_description}>
+			Explore some of our standout projects, each representing a unique
+			facet of our video editing and storytelling expertise. These
+			projects transcend mere videos; they're captivating narratives that
+			inspire and make an impact.
+		</p>
+		<div class={styles.section_case__cards}>
+			{
+				caseData?.map((el) => (
+					<CaseCard
+						title={el.title}
+						description={el.description}
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>

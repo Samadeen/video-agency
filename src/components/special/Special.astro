@@ -1,0 +1,51 @@
+---
+import styles from './Special.module.scss';
+import Button from '../../layouts/button/Button.astro';
+---
+
+<section class={styles.special_container}>
+  <div class={styles.special_wrapper}>
+    <h2>...but, what makes us so special?</h2>
+    <div class={styles.special_card}>
+      <div class={styles.special_card_details}>
+        <h3>01</h3>
+        <h4>We <span>Craft</span> Compelling Media</h4>
+        <p>
+          We empower you to create captivating stories that resonate with your
+          audience.
+        </p>
+      </div>
+      <img src='/assets/special_one.svg' alt='image' />
+    </div>
+    <div class={styles.special_card}>
+      <div class={styles.special_card_details}>
+        <h3>02</h3>
+        <h4>We Stay <span>Ahead</span> of Trends</h4>
+        <p>
+          We provide insights to help you navigate the ever-changing video
+          landscape, ensuring your content remains relevant.
+        </p>
+      </div>
+      <img src='/assets/special_two.svg' alt='image' />
+    </div>
+    <div class={styles.special_card}>
+      <div class={styles.special_card_details}>
+        <h3>03</h3>
+        <h4>We Elevate Visual <span>Quality</span></h4>
+        <p>
+          We enhance your videos to ensure they are visually stunning, leaving a
+          lasting impact.
+        </p>
+      </div>
+      <img src='/assets/special_three.svg' alt='image' />
+    </div>
+    <div class={styles.mb}>
+      <Button
+        title={`explore all services`}
+        img={true}
+        transparent={true}
+        href='/featured-works'
+      />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+import styles from './custom-solutions.module.scss';
+import DetailsCard from '../../components/details-card/details-card.astro';
+
+const info = [
+	{
+		title: 'Personal Vlogs & Lifestyle',
+		items: [
+			'Vlog Editing',
+			'Traveling Vlogs',
+			'Day-in-the-life Videos',
+			'Celebration Highlights',
+			'Family Memories',
+			'And many more',
+		],
+		description:
+			'We’re here to help you. Reach out to us as soon as possible!',
+		isDescription: true,
+		isSecond: false,
+	},
+
+	{
+		title: 'Content & Personal Branding',
+		items: [
+			'Online Courses and Tutorials',
+			'Personal Branding Videos',
+			'YouTube Online Content',
+			'Video Resumes and Portfolios',
+			'And many more',
+		],
+		isDescription: false,
+		isSecond: true,
+	},
+];
+---
+
+<section class={styles.sectionCustom}>
+	<div class={styles.container}>
+		<span>WHAT WE CAN DO FOR YOU</span>
+
+		<h2>Custom Solutions for...</h2>
+
+		<div class={styles.detailsCard_container}>
+			{
+				info.map((el) => (
+					<DetailsCard
+						title={el.title}
+						items={el.items}
+						description={el.description}
+						isDescription={el.isDescription}
+						isSecond={el.isSecond}
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>
